@@ -1,4 +1,5 @@
-import React from "react";
+import { CiLogin, CiLogout } from "react-icons/ci";
+
 import { auth0 } from "@/lib/auth0";
 const Navbar = async () => {
   const session = await auth0.getSession();
@@ -7,19 +8,31 @@ const Navbar = async () => {
       <div>
         <div className="navbar bg-base-100 shadow-sm">
           <div className="flex-1">
-            <a className="btn btn-ghost text-xl">daisyUI</a>
+            <a href="/" className="btn btn-ghost text-xl">
+              Image Drop AI
+            </a>
           </div>
           <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
               <li>
-                <a>Link</a>
+                <a href="/about">About</a>
               </li>
               <li>
                 <details>
-                  <summary>Parent</summary>
+                  <summary>
+                    {session ? (
+                      <div>
+                        <CiLogout />
+                      </div>
+                    ) : (
+                      <div>
+                        <CiLogin />
+                      </div>
+                    )}
+                  </summary>
                   <ul className="bg-base-100 rounded-t-none p-2">
                     <li>
-                      <a>Link 1</a>
+                      <a href="/profile">Profile</a>
                     </li>
                     <li>
                       {session ? (
