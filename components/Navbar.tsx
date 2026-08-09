@@ -18,7 +18,7 @@ const Navbar = async () => {
                 <a href="/about">About</a>
               </li>
               <li>
-                <details>
+                <details className="mr-10">
                   <summary>
                     {session ? (
                       <div>
@@ -30,15 +30,15 @@ const Navbar = async () => {
                       </div>
                     )}
                   </summary>
-                  <ul className="bg-base-100 rounded-t-none p-2">
+                  <ul className="bg-base-100 rounded-t-none">
                     <li>
                       <a href="/profile">Profile</a>
                     </li>
                     <li>
                       {session ? (
-                        <a href="/api/auth/logout">Logout</a>
+                        <a href="/auth/logout">Logout</a>
                       ) : (
-                        <a href="/api/auth/login">Login</a>
+                        <a href="/auth/login">Login</a>
                       )}
                     </li>
                   </ul>
