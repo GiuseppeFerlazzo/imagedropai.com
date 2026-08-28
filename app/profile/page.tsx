@@ -1,5 +1,5 @@
-import React from "react";
 import { auth0 } from "@/lib/auth0";
+
 const Profile = async () => {
   const session = await auth0.getSession();
 
